@@ -72,7 +72,7 @@ public class DVDController {
 	
 	private void addDVD()
 	{
-		dao.addDVD(view.dvdPrompt(dao.getDateFormat()));
+		dao.addDVD(view.dvdPrompt());
 	}
 	
 	private void removeDVD()
@@ -82,6 +82,6 @@ public class DVDController {
 	
 	private void editDVD()
 	{
-		dao.replaceDVD(view.idPrompt(), view.dvdPrompt(dao.getDateFormat()));
+		dao.replaceDVD(view.idPrompt(), view.dvdPrompt());
 	}
 }

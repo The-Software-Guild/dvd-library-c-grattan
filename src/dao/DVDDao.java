@@ -51,9 +51,9 @@ public class DVDDao {
 		return true;
 	}
 	
-	public DVDDao(String filePath, DateTimeFormatter dtf, String d)
+	public DVDDao(String filePath, String dtf, String d)
 	{
-		dtFormat = dtf;
+		dtFormat = DateTimeFormatter.ofPattern(dtf);
 		file = filePath;
 		delimiter = d;
 		unmarshall();
@@ -83,9 +83,9 @@ public class DVDDao {
 		return true;
 	}
 
-	public String getDateFormat()
+	public DateTimeFormatter getDateFormat()
 	{
-		return dtFormat.toString();
+		return dtFormat;
 	}
 	
 	public DVD getByTitle(String title)

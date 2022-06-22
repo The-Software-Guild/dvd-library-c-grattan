@@ -40,9 +40,9 @@ public class DVDView {
 		return io.getString("DVD Title: ");
 	}
 	
-	public LocalDate datePrompt(String format)
+	public LocalDate datePrompt()
 	{
-		return io.getDate("Release Date (" + format + "): ");
+		return io.getDate("Release Date (Year-Month-Date): ");
 	}
 	
 	public String ratingPrompt()
@@ -65,12 +65,12 @@ public class DVDView {
 		return io.getString("Your Review: ");
 	}
 	
-	public DVD dvdPrompt(String dateFormat)
+	public DVD dvdPrompt()
 	{
 		DVD dvd = new DVD();
 		
 		dvd.setTitle(titlePrompt());
-		dvd.setDate(datePrompt(dateFormat));
+		dvd.setDate(datePrompt());
 		dvd.setRating(ratingPrompt());
 		dvd.setDirector(directorPrompt());
 		dvd.setStudio(studioPrompt());

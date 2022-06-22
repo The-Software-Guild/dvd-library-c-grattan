@@ -80,18 +80,20 @@ public class DVDIO {
 	
 	public LocalDate getDate()
 	{
-		LocalDate d = LocalDate.now();
+		LocalDate d = null;
 		do
 		{
+			String dStr = "";
 			try
 			{
-				d = LocalDate.parse(in.nextLine());
+				dStr = in.nextLine();
+				d = LocalDate.parse(dStr);
 			}
 			catch (Exception e)
 			{
 				d = null;
 			}
-		} while(d != null);
+		} while(d == null);
 		return d;
 	}
 }

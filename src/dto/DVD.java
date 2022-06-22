@@ -15,7 +15,7 @@ public class DVD {
 	@Override
 	public String toString()
 	{
-		return title;
+		return title + "(" + date + ")";
 	}
 	
 	public DVD()
