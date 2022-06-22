@@ -38,7 +38,7 @@ public class DVDDao {
 			
 			while(fileIn.hasNextLine())
 			{
-				library.put(library.size(), new DVD(fileIn.nextLine()));
+				library.put(library.size(), new DVD(fileIn.nextLine(), delimiter, dtFormat));
 			}
 			
 			fileIn.close();

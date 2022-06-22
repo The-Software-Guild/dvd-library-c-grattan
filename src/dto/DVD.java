@@ -23,8 +23,22 @@ public class DVD {
 		
 	}
 	
-	public DVD(String fileInput) {
-		
+	public DVD(String fileInput, String delimiter, DateTimeFormatter dtf) throws Exception
+	{
+		String[] fields = fileInput.split(delimiter);
+		if(fields.length == 6)
+		{
+			title = fields[0];
+			date = LocalDate.parse(fields[1], dtf);
+			rating = fields[2];
+			director = fields[3];
+			studio = fields[4];
+			userRating = fields[5];
+		}
+		else
+		{
+			throw new Exception("Bad DVD data");
+		}
 	}
 	
 	public String marshall(DateTimeFormatter dtf, String delimiter)
