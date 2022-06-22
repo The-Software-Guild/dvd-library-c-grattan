@@ -1,27 +1,40 @@
 package dto;
 
 import java.time.*;
-
-enum Rating
-{
-	G,
-	PG,
-	PG_13,
-	R,
-	NC_17
-}
+import java.time.format.DateTimeFormatter;
 
 public class DVD {
 	
 	private String title;
 	private LocalDate date;
-	private Rating rating;
+	private String rating;
 	private String director;
 	private String studio;
 	private String userRating;
 	
-	public DVD() {
-		// TODO Auto-generated constructor stub
+	@Override
+	public String toString()
+	{
+		return title;
+	}
+	
+	public DVD()
+	{
+		
+	}
+	
+	public DVD(String fileInput) {
+		
+	}
+	
+	public String marshall(DateTimeFormatter dtf, String delimiter)
+	{
+		return title + delimiter +
+				date.format(dtf) + delimiter +
+				rating + delimiter +
+				director + delimiter + 
+				studio + delimiter +
+				userRating;
 	}
 
 	public String getTitle() {
@@ -40,11 +53,11 @@ public class DVD {
 		this.date = date;
 	}
 
-	public Rating getRating() {
+	public String getRating() {
 		return rating;
 	}
 
-	public void setRating(Rating rating) {
+	public void setRating(String rating) {
 		this.rating = rating;
 	}
 
@@ -71,5 +84,4 @@ public class DVD {
 	public void setUserRating(String userRating) {
 		this.userRating = userRating;
 	}
-
 }
