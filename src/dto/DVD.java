@@ -15,7 +15,12 @@ public class DVD {
 	@Override
 	public String toString()
 	{
-		return title + "(" + date + ")";
+		return title;
+	}
+	
+	public String fullString()
+	{
+		return title + " (" + date + ")\n" + "Directed by: " + director + "\n'" + userRating + "'\n" + rating;
 	}
 	
 	public DVD()

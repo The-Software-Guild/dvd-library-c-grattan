@@ -17,7 +17,7 @@ public class DVDView {
 	
 	public void displayMenu()
 	{
-		io.println("Welcome to the DVD Library!\n1. View DVDs\n2. View a DVD\n3. Search by Title\n4. Add a DVD\n5. Remove a DVD\n6. Edit a DVD\n7. Exit");
+		io.println("\nWelcome to the DVD Library!\n1. View DVDs\n2. View a DVD\n3. Search by Title\n4. Add a DVD\n5. Remove a DVD\n6. Edit a DVD\n7. Exit");
 	}
 	
 	public int getMenuChoice()
@@ -76,22 +76,27 @@ public class DVDView {
 		dvd.setStudio(studioPrompt());
 		dvd.setUserRating(userRatingPrompt());
 		
+		io.print("\n");
+		
 		return dvd;
 	}
 	
 	public void displayDVD(DVD d)
 	{
-		io.println(d == null ? "DVD not found" : d.toString());
+		io.print("\n");
+		io.println(d == null ? "DVD not found" : (d.fullString() + "\n"));
 	}
 	
 	public void displayLibrary(HashMap<Integer, DVD> lib)
 	{
 		Set<Integer> keys = lib.keySet();
+		io.println("\nCurrent DVD Library:");
 		for(int i : keys)
 		{
 			io.print(i + ": ");
 			displayDVD(lib.get(i));
 		}
+		io.print("\n");
 	}
 	
 	public int idPrompt()

@@ -60,8 +60,7 @@ public class DVDController {
 	
 	private void viewDVD()
 	{
-		int id = view.idPrompt();
-		view.displayDVD(dao.getLibrary().get(id));
+		view.displayDVD(dao.getLibrary().get(view.idPrompt()));
 	}
 	
 	private void searchByTitle()

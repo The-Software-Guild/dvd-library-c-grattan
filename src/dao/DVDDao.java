@@ -99,7 +99,7 @@ public class DVDDao {
 		Set<Integer> keys = library.keySet();
 		for(int key : keys)
 		{
-			if(library.get(key).getTitle().equals(title))
+			if(library.get(key).getTitle().toLowerCase().equals(title.toLowerCase()))
 			{
 				return key;
 			}
